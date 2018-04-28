@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql:database
+    password: example
+    username: postgres
+
+  jpa:
+  # Disable feature detection by this undocumented parameter. Check the org.hibernate.engine.jdbc.internal.JdbcServiceImpl.configure method for more details.
+    properties.hibernate.temp.use_jdbc_metadata_defaults: false
+  # Because detection is disabled you have to set correct dialect by hand.
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+logging:
+  level:
+    ROOT: info
+    com.pacegallery.portal.artist: debug
+
+s3:
+  accessKey: AKIAJMUFNVHR5D3CACMQ
+  secretKey: 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
+  bucketName: artistportal-dev
